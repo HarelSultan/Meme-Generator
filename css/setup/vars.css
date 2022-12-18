@@ -1,0 +1,7 @@
+:root {
+    /* pallete */
+    --clr0: linear-gradient(-86deg, rgb(25, 224, 108) 0%, #0c98b9 100%);
+    --clr1: #fefefe;
+    --clr2: #21ac91;
+    --clr3: #41444b;
+}

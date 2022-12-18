@@ -1,0 +1,10 @@
+/* typography */
+@font-face {
+    font-family: poppins;
+    src: url(/fonts/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: poppins-semi;
+    src: url(/fonts/Poppins-SemiBold.ttf);
+}

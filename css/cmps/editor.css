@@ -1,0 +1,308 @@
+/* Meme generator section */
+.meme-editor {
+    width: 90vw;
+    margin: 0 auto;
+    margin-block-start: 1.5em;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Canvas container */
+.canvas-container {
+    height: 350px;
+    width: 350px;
+    border: 3px solid rgb(173, 170, 170);
+    border-radius: 12px;
+    margin-block-end: 1em;
+}
+
+#my-canvas {
+    border-radius: 0.5em;
+    transform: translate(-1px, 1px);
+}
+
+/* Meme Control Box */
+.meme-funcs-container {
+    height: 400px;
+    width: 350px;
+    background: rgba(236, 230, 230, 0.222);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1.5em;
+    font-size: 12.5px;
+    padding-inline: 2em;
+}
+
+.meme-funcs-container>* {
+    margin-block-start: 1.5em;
+}
+
+.text-input {
+    font-size: 1.3125em;
+    height: 2.8em;
+    width: 17.5em;
+    border-radius: 1.2em;
+    text-align: center;
+}
+
+.crd-container>* {
+    width: 2.5em;
+    height: 3em;
+    margin-right: 0.5em;
+    border: none;
+    border-radius: .5em;
+}
+
+button.switch-focus {
+    background: linear-gradient(-38deg, #66c4dc 0%, #40b1ce 50%, #0c98bb 100%);
+}
+
+.switch-focus-icon {
+    transform: translateY(1px) scale(1.8, 1.8) rotate(90deg);
+}
+
+button.add-text {
+    background: linear-gradient(-38deg, #42eb5c 0%, #37b34a 100%);
+}
+
+.fa-plus {
+    transform: scale(1.7, 1.9);
+}
+
+button.delete-text {
+    background: linear-gradient(-38deg, #cf1d37 0%, #cf1d37 1%, #f05036 100%);
+}
+
+.fa-trash {
+    transform: translateX(-1px) scale(1.8, 1.8);
+}
+
+button.btn-save {
+    background: linear-gradient(-38deg, #1e7cd3 2%, #40b1ce 0%, #8f44bb 100%);
+}
+
+.save-icon {
+    transform: translate(.2px, -.5px) scale(2, 2);
+}
+
+.text-styling-container {
+    background: #19a59f;
+    width: 22.97em;
+    border-radius: 1.575em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top-stylng-container {
+    width: 21em;
+    display: flex;
+    justify-content: space-evenly;
+    margin-block-start: 0.5em;
+    margin-block-end: 1em;
+}
+
+.top-stylng-container>* {
+    width: 2.5em;
+    height: 3em;
+    font-family: poppins-semi;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: .5em;
+    border: none;
+    background-size: 1.8em;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.increase-size {
+    background-image: url(/icons/a-plus-symbol.png);
+}
+
+.decrease-size {
+    background-image: url(/icons/a-minus-symbol.png);
+}
+
+.text-align-left {
+    background-image: url(/icons/align-left.png);
+}
+
+.text-align-center {
+    background-image: url(/icons/align-center.png);
+}
+
+.text-align-right {
+    background-image: url(/icons/align-right.png);
+}
+
+.bottom-styling-container {
+    width: 21em;
+    display: flex;
+    justify-content: space-evenly;
+    margin-block-start: 0.5em;
+    margin-block-end: 1em;
+    align-items: center;
+}
+
+.bottom-styling-container>*:not(:first-child) {
+    width: 2.5em;
+    height: 3em;
+    font-family: poppins-semi;
+    border-radius: .5em;
+    border: none;
+    background-size: 2.3em;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.select-font {
+    font-size: 1.5750em;
+    width: 6.666em;
+    height: 1.905em;
+    border-radius: .5em;
+    border: none;
+    padding-inline-start: .7em;
+}
+
+.stroke-color-btn {
+    background-image: url(/icons/stroke.png);
+}
+
+.text-color-btn {
+    background-image: url(/icons/paint.png);
+}
+
+.bottom-styling-container input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    opacity: 0;
+}
+
+.stickers-container {
+    width: 22.97em;
+    background: var(--clr1);
+    display: flex;
+    justify-content: space-evenly;
+    border-radius: 1.575em;
+}
+
+.sticker-btn {
+    font-size: 2.5em;
+    height: 1.5em;
+    width: 1.4em;
+    border: none;
+    border-radius: 2em;
+}
+
+.share-container {
+    width: 22.97em;
+    display: flex;
+    justify-content: space-between;
+    padding-block-end: 2em;
+}
+
+.share-container>* {
+    font-size: 1.6em;
+    height: 2em;
+    width: 48%;
+    font-family: poppins;
+}
+
+.share-btn {
+    background: #1e7cd3;
+    border: none;
+    border-radius: 0.5em;
+}
+
+.fa-share-nodes {
+    transform: scale(0.8, 0.8);
+}
+
+.download-btn {
+    text-decoration: none;
+    color: var(--clr1);
+    background: #8f44bb;
+    border-radius: 0.5em;
+}
+
+.download-btn img {
+    color: var(--clr1);
+    height: 1.5em;
+    width: 1.3em;
+}
+
+.fa-download {
+    transform: scale(0.8, 0.8);
+}
+
+/* MQ */
+@media (min-width:900px) {
+
+    .meme-editor {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .canvas-container {
+        height: 453px;
+        width: 456px;
+        margin-block-end: 0;
+    }
+
+    .meme-funcs-container {
+        height: 453px;
+        width: 350px;
+        font-size: 14px;
+    }
+
+    .switch-focus-icon {
+        transform: translateX(-2px) scale(1.8, 1.8) rotate(90deg);
+    }
+
+    .fa-plus {
+        transform: translateY(2.5px) scale(1.7, 1.9);
+    }
+
+    .fa-trash {
+        transform: translate(.7px, 1.2px) scale(2, 2);
+    }
+
+    .save-icon {
+        transform: translate(.7px, 1.5px) scale(2, 2);
+    }
+}
+
+
+@media (min-width:1080px) {
+
+    .meme-editor {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .canvas-container {
+        width: 500px;
+        height: 500px;
+        margin: 0;
+    }
+
+    .meme-funcs-container {
+        width: 450px;
+        height: 500px;
+        font-size: 15px;
+    }
+
+    .switch-focus-icon {
+        transform: translate(-1.5px, 1px) scale(1.8, 1.8) rotate(90deg);
+    }
+
+    .fa-trash {
+        transform: translate(.4px, 1.5px) scale(2, 2);
+    }
+
+}

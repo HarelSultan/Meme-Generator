@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <script src="https://kit.fontawesome.com/00be3640fd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body onload="onInitGallery()">
+    <!-- Nav Bar -->
+    <header class="main-header flex">
+        <div class="main-header-content flex flex-align-center flex-space-between">
+
+            <!-- Logo -->
+            <div class="logo flex flex-align-center">
+                <img src="logo/LOGO.png">
+            </div>
+
+            <!-- Nav btns -->
+            <nav class="nav-btns-container">
+                <button class="nav-btn active gallery-btn">Gallery</button>
+                <button class="nav-btn about-btn">About</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Gallery Section -->
+    <section class="meme-gallery">
+
+        <!-- Filter Section -->
+        <div class="filter-container">
+
+            <!-- Search image -->
+            <div class="search-input-container flex flex-align-center flex-justify-center">
+                <input class="search-input" type="search" name="search-key-word" id="search-key-word"
+                    placeholder="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <!-- Keywords container -->
+            <div class="keyword-container flex flex-align-center flex-space-evenly">
+                <span class="keyword-span">animal</span><span class="keyword-span">men</span>
+                <span class="keyword-span">animal</span><span class="keyword-span">Funny</span>
+            </div>
+            <!-- Show all keywords btn -->
+            <button class="more-keywords-btn btn">More</button>
+        </div>
+
+        <!-- Upload Img -->
+        <div class="upload-container flex flex-align-center flex-justify-center">
+            <label class="upload-img-label " for="file-input">Upload Image</label>
+            <input type="file" class="upload-input btn" name="image" id="file-input">
+        </div>
+
+        <!-- Images container - grid -->
+        <main class="gallery-main-content scroll">
+        </main>
+
+    </section>
+
+    <!-- Meme Gen Section -->
+    <section hidden class="meme-editor flex-space-between">
+        <!-- Canvas -->
+        <div class="canvas-container">
+            <canvas id="my-canvas" height="350" width="350" style="border-radius: 12px;"></canvas>
+        </div>
+        <!-- Meme functions -->
+        <div class="meme-funcs-container">
+            <!-- Text input -->
+            <input class="text-input" type="text" placeholder="Start typing !">
+            <!-- Create, Read, Delete btns -->
+            <div class="crd-container">
+                <button class="switch-focus"><i
+                        class="fa-solid fa-arrow-right-arrow-left switch-focus-icon"></i></button>
+                <button class="add-text"><i class="fa-solid fa-plus"></i></button>
+                <button class="delete-text"><i class="fa-solid fa-trash"></i></button>
+            </div>
+            <!-- Styling text input -->
+            <div class="text-styling-container">
+                <div class="top-stylng-container">
+                    <button data-change-by="2" class="increase-size"></button>
+                    <button data-change-by="-2" class="decrease-size"></button>
+                    <button data-align="left" class="text-align-left align-btn"></button>
+                    <button data-align="center" class="text-align-center align-btn"></button>
+                    <button data-align="right" class="text-align-right align-btn"></button>
+                </div>
+                <div class="bottom-styling-container">
+                    <select class="select-font" name="text-font">
+                        <option value="impact">IMPACT</option>
+                        <option value="ariel">ARIEL</option>
+                    </select>
+                    <button class="stroke-color-btn">
+                        <input class="stroke-color" type="color" name="border-color">
+                    </button>
+                    <button class="text-color-btn">
+                        <input class="text-color" type="color" name="text-color" value="#ffffff">
+                    </button>
+                </div>
+            </div>
+            <!-- Stickers -->
+            <div class="stickers-container">
+                <button class="sticker-btn">🌝</button>
+                <button class="sticker-btn">😞</button>
+                <button class="sticker-btn">🙃</button>
+                <button class="sticker-btn">😂</button>
+                <button class="sticker-btn">🥱</button>
+            </div>
+            <!-- Share, Save to computer / to local storage -->
+            <div class="share-container">
+
+                <button class="share-btn flex flex-justify-center flex-align-center"><i
+                        class="fa-solid fa-share-nodes">&nbsp;</i>Share</button>
+
+                <a href="#" class="download-btn btn flex flex-justify-center flex-align-center" download="my-meme.jpg">
+                    <i class="fa-solid fa-download">&nbsp;</i> Download
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="js/services/storage-service.js"></script>
+    <script src="js/services/gallery-service.js"></script>
+    <script src="js/gallery-controller.js"></script>
+    <script src="js/services/meme-service.js"></script>
+    <script src="js/meme-controller.js"></script>
+</body>
+
+</html>
