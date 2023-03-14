@@ -34,7 +34,7 @@
     padding-inline: 2em;
 }
 
-.meme-funcs-container>* {
+.meme-funcs-container > * {
     margin-block-start: 1.5em;
 }
 
@@ -46,12 +46,12 @@
     text-align: center;
 }
 
-.crd-container>* {
+.crd-container > * {
     width: 2.5em;
     height: 3em;
     margin-right: 0.5em;
     border: none;
-    border-radius: .5em;
+    border-radius: 0.5em;
 }
 
 button.switch-focus {
@@ -83,7 +83,7 @@ button.btn-save {
 }
 
 .save-icon {
-    transform: translate(.2px, -.5px) scale(2, 2);
+    transform: translate(0.2px, -0.5px) scale(2, 2);
 }
 
 .text-styling-container {
@@ -103,14 +103,14 @@ button.btn-save {
     margin-block-end: 1em;
 }
 
-.top-stylng-container>* {
+.top-stylng-container > * {
     width: 2.5em;
     height: 3em;
     font-family: poppins-semi;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: .5em;
+    border-radius: 0.5em;
     border: none;
     background-size: 1.8em;
     background-repeat: no-repeat;
@@ -146,11 +146,11 @@ button.btn-save {
     align-items: center;
 }
 
-.bottom-styling-container>*:not(:first-child) {
+.bottom-styling-container > *:not(:first-child) {
     width: 2.5em;
     height: 3em;
     font-family: poppins-semi;
-    border-radius: .5em;
+    border-radius: 0.5em;
     border: none;
     background-size: 2.3em;
     background-repeat: no-repeat;
@@ -158,12 +158,12 @@ button.btn-save {
 }
 
 .select-font {
-    font-size: 1.5750em;
+    font-size: 1.575em;
     width: 6.666em;
     height: 1.905em;
-    border-radius: .5em;
+    border-radius: 0.5em;
     border: none;
-    padding-inline-start: .7em;
+    padding-inline-start: 0.7em;
 }
 
 .stroke-color-btn {
@@ -205,7 +205,7 @@ button.btn-save {
     padding-block-end: 2em;
 }
 
-.share-container>* {
+.share-container > * {
     font-size: 1.6em;
     height: 2em;
     width: 48%;
@@ -240,8 +240,7 @@ button.btn-save {
 }
 
 /* MQ */
-@media (min-width:900px) {
-
+@media (min-width: 900px) {
     .meme-editor {
         flex-direction: row;
         align-items: center;
@@ -268,20 +267,18 @@ button.btn-save {
     }
 
     .fa-trash {
-        transform: translate(.7px, 1.2px) scale(2, 2);
+        transform: translate(0.7px, 1.2px) scale(2, 2);
     }
 
     .save-icon {
-        transform: translate(.7px, 1.5px) scale(2, 2);
+        transform: translate(0.7px, 1.5px) scale(2, 2);
     }
 }
 
-
-@media (min-width:1080px) {
-
+@media (min-width: 1080px) {
     .meme-editor {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
     }
 
@@ -302,7 +299,6 @@ button.btn-save {
     }
 
     .fa-trash {
-        transform: translate(.4px, 1.5px) scale(2, 2);
+        transform: translate(0.4px, 1.5px) scale(2, 2);
     }
-
 }
