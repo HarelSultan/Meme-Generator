@@ -6,7 +6,7 @@ let gState = {
     currTextAlign: 'left',
     currFontColor: '#fafafa',
     currStrokeColor: '#000000',
-    currFont: 'impact'
+    currFont: 'impact',
 }
 let gSavedMemes
 const MEME_STORAGE_KEY = 'savedMemesDB'
@@ -15,7 +15,7 @@ function setSelectedImg(imgId) {
     gMeme = {
         selectedImgId: imgId,
         focusedLineIdx: 0,
-        lines: []
+        lines: [],
     }
 }
 
@@ -29,7 +29,7 @@ function getSelectedImgId() {
 
 function checkFocusedLineClick(x, y) {
     const { xStart, yStart, xEnd, yEnd } = getFocusedLineBorderCords()
-    return (x >= xStart && x <= xEnd && y >= yStart && y <= yEnd)
+    return x >= xStart && x <= xEnd && y >= yStart && y <= yEnd
 }
 
 function moveFocusedLine(dx, dy) {
@@ -59,7 +59,13 @@ function addNewLine(txt = 'Start Typing') {
     x -= txt.length * 5
     if (gMeme.focusedLineIdx === 0) y = y * 0.15
     if (gMeme.focusedLineIdx === 1) y = y * 1.8
-    const { currFontSize: size, currFontColor: color, currStrokeColor: strokeColor, currTextAlign: align, currFont: fontFamily } = gState
+    const {
+        currFontSize: size,
+        currFontColor: color,
+        currStrokeColor: strokeColor,
+        currTextAlign: align,
+        currFont: fontFamily,
+    } = gState
     gMeme.lines.push({ txt, size, color, strokeColor, fontFamily, align, x, y })
 }
 
@@ -74,9 +80,8 @@ function setLineText(text) {
 }
 
 function changeLineFocus(clickedLineIdx = null) {
-
     if (clickedLineIdx === null) {
-        gMeme.focusedLineIdx = (gMeme.focusedLineIdx >= gMeme.lines.length - 1) ? 0 : gMeme.focusedLineIdx + 1
+        gMeme.focusedLineIdx = gMeme.focusedLineIdx >= gMeme.lines.length - 1 ? 0 : gMeme.focusedLineIdx + 1
     } else {
         gMeme.focusedLineIdx = clickedLineIdx
     }
@@ -108,14 +113,16 @@ function changeFontSize(ev) {
 function alignFocusedLine(alignTo) {
     const focusedLine = getFocusedLine()
     const focusedLineTextWidth = getTextWidth(focusedLine.txt)
-    console.log('focusedLineTextWidth:', focusedLineTextWidth)
     let { x } = getCanvasCenterCords()
     switch (alignTo) {
-        case 'left': focusedLine.x = 30
+        case 'left':
+            focusedLine.x = 30
             break
-        case 'center': focusedLine.x = x - (focusedLineTextWidth / 2)
+        case 'center':
+            focusedLine.x = x - focusedLineTextWidth / 2
             break
-        case 'right': focusedLine.x = (x * 1.8) - focusedLineTextWidth
+        case 'right':
+            focusedLine.x = x * 1.8 - focusedLineTextWidth
             break
     }
 }
@@ -129,14 +136,13 @@ function getFocusedLine() {
     return gMeme.lines[focusedLineIdx]
 }
 
-
 function saveMemeToStorage(savedMemeId) {
     const { selectedImgId, lines, focusedLineIdx } = getMeme()
     const savedMeme = {
         selectedImgId,
         focusedLineIdx,
         lines,
-        savedMemeId
+        savedMemeId,
     }
     if (!gSavedMemes || !gSavedMemes.length) {
         gSavedMemes = [savedMeme]
@@ -146,20 +152,15 @@ function saveMemeToStorage(savedMemeId) {
     saveToStorage(MEME_STORAGE_KEY, gSavedMemes)
 }
 
-
 function setSavedMemeImg(savedMemeId) {
     const savedMemes = loadFromStorage(MEME_STORAGE_KEY)
-    console.log('savedMemes:', savedMemes)
-    console.log('savedMemeId:', savedMemeId)
     const savedMeme = savedMemes.find(meme => meme.savedMemeId === savedMemeId)
-    console.log('savedMemes:', savedMeme)
     gMeme = {
         selectedImgId: savedMeme.selectedImgId,
         focusedLineIdx: savedMeme.focusedLineIdx,
-        lines: savedMeme.lines
+        lines: savedMeme.lines,
     }
 }
-
 
 // Needs to save meme
 

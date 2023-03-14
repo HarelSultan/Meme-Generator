@@ -11,12 +11,13 @@ function onInitGallery() {
 
 function renderImgs() {
     const imgs = getImgs()
-    let strHTMLs = imgs.map(img => `
+    let strHTMLs = imgs.map(
+        img => `
     <img data-id="${img.id}" class="gallery-img" src=${img.src}>
-    `)
+    `
+    )
     document.querySelector('.gallery-main-content').innerHTML = strHTMLs.join('')
 }
-
 
 function addListeners() {
     const elImgs = document.querySelectorAll('.gallery-img')
@@ -27,10 +28,12 @@ function addListeners() {
     const elKeywordSpans = document.querySelectorAll('.keyword-span')
     const elMoreKeywordsBtn = document.querySelector('.more-keywords-btn')
 
-    elImgs.forEach(img => img.addEventListener('click', () => {
-        setSelectedImg(+img.dataset.id)
-        onInitMeme()
-    }))
+    elImgs.forEach(img =>
+        img.addEventListener('click', () => {
+            setSelectedImg(+img.dataset.id)
+            onInitMeme()
+        })
+    )
     elKeywordSpans.forEach(keyword => keyword.addEventListener('click', increaseKeywordSize))
     elMoreKeywordsBtn.addEventListener('click', onNextKeywords)
     elGalleryBtn.addEventListener('click', renderGallerySection)
@@ -46,7 +49,7 @@ function onUploadImg(ev) {
 function loadImageFromInput(ev, onImageReady) {
     const reader = new FileReader()
 
-    reader.onload = (event) => {
+    reader.onload = event => {
         let img = new Image()
         img.src = event.target.result
         img.onload = () => {
@@ -62,7 +65,6 @@ function renderUploadedImg(img) {
     setSelectedImg(imgs.length)
     onInitMeme()
 }
-
 
 function onSetFilterBy(ev) {
     setImgsFilter(ev.target.value)
@@ -81,9 +83,7 @@ function renderGallerySection(ev) {
 
 function increaseKeywordSize(ev) {
     let keywordFontSize = parseFloat(window.getComputedStyle(ev.target).getPropertyValue('font-size'))
-    console.log('keywordFontSize:', (keywordFontSize))
     if (keywordFontSize < 20) ev.target.style.fontSize = keywordFontSize + 1 + 'px'
-    console.log('ev.target.value:', ev.target.innerText)
     setImgsFilter(ev.target.innerText)
     renderImgs()
 }
@@ -91,8 +91,10 @@ function increaseKeywordSize(ev) {
 function renderKeywords() {
     const keywords = getKeywords()
     const keywordsMap = getKeywordsMap()
-    const strHTMLs = keywords.map(keyword => `
-    <span style="font-size: ${keywordsMap[keyword] + 12}px;" class="keyword-span">${keyword}</span>`)
+    const strHTMLs = keywords.map(
+        keyword => `
+    <span style="font-size: ${keywordsMap[keyword] + 12}px;" class="keyword-span">${keyword}</span>`
+    )
     document.querySelector('.keyword-container').innerHTML = strHTMLs.join('')
 }
 
@@ -117,11 +119,11 @@ function onSaveMemeToGallery(imgDataUrl, savedMemeId) {
 
 function renderSavedMemesImg() {
     const savedMemesImg = getSavedMemesImg()
-    if (!savedMemesImg) return console.log('proba')
-    console.log('savedMemes:', savedMemesImg)
-    let strHTMLs = savedMemesImg.map(memeImg => `
+    if (!savedMemesImg) return
+    let strHTMLs = savedMemesImg.map(
+        memeImg => `
     <img onclick="setSavedMemeImg('${memeImg.savedMemeId}');hideSavedSection();onInitMeme()" class="gallery-img" src=${memeImg.src}>
-    `)
+    `
+    )
     document.querySelector('.saved-memes-section').innerHTML = strHTMLs.join('')
 }
-

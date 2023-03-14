@@ -23,7 +23,7 @@
 }
 
 /* Nav Buttons */
-.nav-btns-container>* {
+.nav-btns-container > * {
     background: none;
     border: none;
     font-size: 1.25em;
@@ -38,8 +38,7 @@
 
 /* MQ */
 
-@media (min-width:900px) {
-
+@media (min-width: 900px) {
     .main-header {
         max-width: 97vw;
         margin-block: 0.5em;

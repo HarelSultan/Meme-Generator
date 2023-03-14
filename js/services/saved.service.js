@@ -5,11 +5,10 @@ function addSavedMemesImg(imgDataUrl, savedMemeId) {
     if (!gSavedMemesImg || !gSavedMemesImg.length) {
         gSavedMemesImg = [{ savedMemeId, src: imgDataUrl }]
     } else {
-        gSavedMemesImg.push({ imgDataUrl, savedMemeId })
+        gSavedMemesImg.push({ savedMemeId: imgDataUrl, src: savedMemeId })
     }
     saveToStorage(SAVED_STORAGE_KEY, gSavedMemesImg)
 }
-
 
 function getSavedMemesImg() {
     gSavedMemesImg = loadFromStorage(SAVED_STORAGE_KEY)

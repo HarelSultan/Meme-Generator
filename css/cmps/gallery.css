@@ -1,6 +1,6 @@
 /* Custom Scroll bar */
 .scroll::-webkit-scrollbar {
-    width: .8em;
+    width: 0.8em;
 }
 
 .scroll::-webkit-scrollbar-track {
@@ -89,7 +89,7 @@
     background: #0c98b9;
     text-align: center;
     cursor: pointer;
-    padding: .5em;
+    padding: 0.5em;
     border-radius: 1em;
 }
 
@@ -118,7 +118,6 @@
 /* MQ */
 
 @media (min-width: 475px) {
-
     .gallery-main-content {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         margin-inline-end: 2em;
@@ -129,12 +128,9 @@
         max-width: 200px;
         border-radius: 10px;
     }
-
 }
 
-
-@media (min-width:900px) {
-
+@media (min-width: 900px) {
     .filter-container {
         grid-template-columns: 1.1fr 1.2fr 0.25fr;
         grid-template-rows: 1fr;
@@ -155,8 +151,7 @@
     }
 }
 
-@media (min-width:1080px) {
-
+@media (min-width: 1080px) {
     .filter-container {
         font-size: 16px;
     }

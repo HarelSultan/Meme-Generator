@@ -13,7 +13,6 @@ let gSavedMemesImg
 function setImgs() {
     gImgs = loadFromStorage(STORAGE_KEY)
     if (!gImgs || !gImgs.length) {
-        console.log('no images')
         gImgs = []
         gImgs.push({ id: gNextId++, src: 'img/1.jpg', keywords: ['politics', 'angry'] })
         gImgs.push({ id: gNextId++, src: 'img/2.jpg', keywords: ['dog', 'cute'] })
@@ -35,7 +34,6 @@ function setImgs() {
         gImgs.push({ id: gNextId++, src: 'img/18.jpg', keywords: ['tv', 'funny'] })
         saveToStorage(STORAGE_KEY, gImgs)
     }
-
 }
 
 function getImgs() {
@@ -48,7 +46,20 @@ function getImgs() {
 function setKeywordsMap() {
     gKeywordsMap = loadFromStorage(WORDS_STORAGE_KEY)
     if (!gKeywordsMap || !gKeywordsMap.length) {
-        gKeywordsMap = { politics: 2, dog: 3, funny: 0, sleepy: 5, cute: 0, angry: 1, baby: 0, tv: 0, boxing: 0, actor: 0, scary: 0, facepalm: 0 }
+        gKeywordsMap = {
+            politics: 2,
+            dog: 3,
+            funny: 0,
+            sleepy: 5,
+            cute: 0,
+            angry: 1,
+            baby: 0,
+            tv: 0,
+            boxing: 0,
+            actor: 0,
+            scary: 0,
+            facepalm: 0,
+        }
     }
 }
 
@@ -57,7 +68,20 @@ function getKeywordsMap() {
 }
 
 function setKeywords() {
-    gKeywords = ['politics', 'dog', 'funny', 'sleepy', 'cute', 'angry', 'baby', 'tv', 'boxing', 'actor', 'scary', 'facepalm']
+    gKeywords = [
+        'politics',
+        'dog',
+        'funny',
+        'sleepy',
+        'cute',
+        'angry',
+        'baby',
+        'tv',
+        'boxing',
+        'actor',
+        'scary',
+        'facepalm',
+    ]
 }
 
 function getKeywords() {

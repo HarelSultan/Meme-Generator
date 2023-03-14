@@ -96,13 +96,11 @@ function onDown(ev) {
     }
     // Checking if any line got clicked if so changing the focus
     const clickedLineIdx = getClickedLineIdx(x, y)
-    console.log('clickedLineIdx:', clickedLineIdx)
     if (clickedLineIdx !== null) {
         changeLineFocus(clickedLineIdx)
         renderMeme()
         renderFocusedLineBorder()
         renderFocusedLineSettings()
-        console.log('clickedLineIdx:', clickedLineIdx)
     } else {
         // If no line got clicked rendering the canvas without any border
         renderMeme()
@@ -224,7 +222,6 @@ function drawText(txt, size, align, color, strokeColor, fontFamily, x, y) {
     gCtx.fillStyle = color
     gCtx.strokeStyle = strokeColor
     gCtx.font = `${size}px ${fontFamily}`
-    console.log('gCtx.font:', gCtx.font)
     gCtx.textAlign = align
     gCtx.textBaseline = 'top'
     gCtx.fillText(txt, x, y)
@@ -250,8 +247,8 @@ function drawBorder(x, y, size, txt, color, currFont) {
     gCtx.strokeStyle = color
     gCtx.font = `${size}px ${currFont}`
     let textWidth = gCtx.measureText(txt).width
-    let borderStartingWidth = parseInt(x - (size * 0.3))
-    let borderStartingHeight = parseInt(y - (size * 0.15))
+    let borderStartingWidth = parseInt(x - size * 0.3)
+    let borderStartingHeight = parseInt(y - size * 0.15)
     let borderWidth = parseInt(textWidth + size * 0.8)
     let borderHeight = parseInt(size * 1.5)
     gCtx.strokeRect(borderStartingWidth, borderStartingHeight, borderWidth, borderHeight)
@@ -280,7 +277,7 @@ function getLineCords({ x, y, size, txt }) {
 function getPos(ev) {
     let pos = {
         x: ev.offsetX,
-        y: ev.offsetY
+        y: ev.offsetY,
     }
     // Checking if user accesing trough mobile
     if (TOUCH_EVS.includes(ev.type)) {
@@ -288,7 +285,7 @@ function getPos(ev) {
         ev = ev.changedTouches[0]
         pos = {
             x: ev.pageX - ev.target.offsetLeft - ev.target.clientLeft,
-            y: ev.pageY - ev.target.offsetTop - ev.target.clientTop
+            y: ev.pageY - ev.target.offsetTop - ev.target.clientTop,
         }
     }
     return pos

@@ -6,14 +6,14 @@ let gState = {
     currTextAlign: 'left',
     currFontColor: '#fafafa',
     currStrokeColor: '#000000',
-    currFont: 'impact'
+    currFont: 'impact',
 }
 
 function setSelectedImg(imgId) {
     gMeme = {
         selectedImgId: imgId,
         selectedLineIdx: 0,
-        lines: []
+        lines: [],
     }
 }
 
@@ -27,7 +27,7 @@ function getSelectedImgId() {
 
 function checkFocusedLineClick(x, y) {
     const { xStart, yStart, xEnd, yEnd } = getFocusedLineBorderCords()
-    return (x >= xStart && x <= xEnd && y >= yStart && y <= yEnd)
+    return x >= xStart && x <= xEnd && y >= yStart && y <= yEnd
 }
 
 function moveFocusedLine(dx, dy) {
@@ -57,7 +57,13 @@ function addNewLine(txt = 'Start Typing') {
     x -= txt.length * 5
     if (gMeme.selectedLineIdx === 0) y = y * 0.15
     if (gMeme.selectedLineIdx === 1) y = y * 1.8
-    const { currFontSize: size, currFontColor: color, currStrokeColor: strokeColor, currTextAlign: align, currFont: fontFamily } = gState
+    const {
+        currFontSize: size,
+        currFontColor: color,
+        currStrokeColor: strokeColor,
+        currTextAlign: align,
+        currFont: fontFamily,
+    } = gState
     gMeme.lines.push({ txt, size, color, strokeColor, fontFamily, align, x, y })
 }
 
@@ -73,7 +79,7 @@ function setLineText(text) {
 
 function changeLineFocus(clickedLineIdx = null) {
     if (clickedLineIdx === null) {
-        gMeme.selectedLineIdx = (gMeme.selectedLineIdx >= gMeme.lines.length - 1) ? 0 : gMeme.selectedLineIdx + 1
+        gMeme.selectedLineIdx = gMeme.selectedLineIdx >= gMeme.lines.length - 1 ? 0 : gMeme.selectedLineIdx + 1
     } else {
         gMeme.selectedLineIdx = clickedLineIdx
     }
@@ -105,14 +111,16 @@ function changeFontSize(ev) {
 function alignFocusedLine(alignTo) {
     const focusedLine = getFocusedLine()
     const focusedLineTextWidth = getTextWidth(focusedLine.txt)
-    console.log('focusedLineTextWidth:', focusedLineTextWidth)
     let { x } = getCanvasCenterCords()
     switch (alignTo) {
-        case 'left': focusedLine.x = 30
+        case 'left':
+            focusedLine.x = 30
             break
-        case 'center': focusedLine.x = x - (focusedLineTextWidth / 2)
+        case 'center':
+            focusedLine.x = x - focusedLineTextWidth / 2
             break
-        case 'right': focusedLine.x = (x * 1.8) - focusedLineTextWidth
+        case 'right':
+            focusedLine.x = x * 1.8 - focusedLineTextWidth
             break
     }
 }
