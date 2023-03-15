@@ -118,23 +118,23 @@ button.btn-save {
 }
 
 .increase-size {
-    background-image: url(/icons/a-plus-symbol.png);
+    background-image: url(../../icons/a-plus-symbol.png);
 }
 
 .decrease-size {
-    background-image: url(/icons/a-minus-symbol.png);
+    background-image: url(../../icons/a-minus-symbol.png);
 }
 
 .text-align-left {
-    background-image: url(/icons/align-left.png);
+    background-image: url(../../icons/align-left.png);
 }
 
 .text-align-center {
-    background-image: url(/icons/align-center.png);
+    background-image: url(../../icons/align-center.png);
 }
 
 .text-align-right {
-    background-image: url(/icons/align-right.png);
+    background-image: url(../../icons/align-right.png);
 }
 
 .bottom-styling-container {
