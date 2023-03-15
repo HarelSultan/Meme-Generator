@@ -167,11 +167,11 @@ button.btn-save {
 }
 
 .stroke-color-btn {
-    background-image: url(/icons/stroke.png);
+    background-image: url(../../icons/stroke.png);
 }
 
 .text-color-btn {
-    background-image: url(/icons/paint.png);
+    background-image: url(../../icons/paint.png);
 }
 
 .bottom-styling-container input {
