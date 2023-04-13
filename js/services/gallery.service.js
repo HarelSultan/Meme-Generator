@@ -32,6 +32,13 @@ function setImgs() {
         gImgs.push({ id: gNextId++, src: 'img/16.jpg', keywords: ['tv', 'facepalm'] })
         gImgs.push({ id: gNextId++, src: 'img/17.jpg', keywords: ['politics', 'funny'] })
         gImgs.push({ id: gNextId++, src: 'img/18.jpg', keywords: ['tv', 'funny'] })
+        gImgs.push({ id: gNextId++, src: 'img/19.jpg', keywords: ['cat', 'funny'] })
+        gImgs.push({ id: gNextId++, src: 'img/20.jpg', keywords: ['cat', 'dog'] })
+        gImgs.push({ id: gNextId++, src: 'img/21.jpg', keywords: ['cat', 'funny'] })
+        gImgs.push({ id: gNextId++, src: 'img/22.jpg', keywords: ['funny', 'cute'] })
+        gImgs.push({ id: gNextId++, src: 'img/23.jpg', keywords: ['funny', 'angry'] })
+        gImgs.push({ id: gNextId++, src: 'img/24.jpg', keywords: ['dog', 'funny'] })
+        gImgs.push({ id: gNextId++, src: 'img/25.jpg', keywords: ['tv', 'funny'] })
         saveToStorage(STORAGE_KEY, gImgs)
     }
 }

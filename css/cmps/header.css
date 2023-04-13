@@ -48,4 +48,8 @@
         width: 75vw;
         margin-inline-start: 5vw;
     }
+
+    .logo img {
+        width: 9em;
+    }
 }
